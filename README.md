@@ -28,10 +28,15 @@ function acceptTable(tableName){
 
 Usage:
 
-Windows: java -cp "dist/\*;lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolOracle <Oracle JDBC url> <user password> oracle-filters.js
+Windows: 
+```
+java -cp "dist/*;lib/*" co.kuznetsov.database.tool.WikiSchemaRenderingToolOracle <Oracle JDBC url> <user password> oracle-filters.js
+```
 
-Unix:    java -cp "dist/\*:lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolOracle <Oracle JDBC url> <user password> oracle-filters.js
-
+Unix:    
+```
+java -cp "dist/\*:lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolOracle <Oracle JDBC url> <user password> oracle-filters.js
+```
 
 MySQL
 
@@ -50,6 +55,10 @@ function acceptTable(tableName){
 
 Usage:
 
+```
 Windows: java -cp "dist/\*;lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolMySQL <MySQL JDBC url> <user password> mysql-filters.js
+```
 
+```
 Unix:    java -cp "dist/\*:lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolMySQL <MySQL JDBC url> <user password> mysql-filters.js
+```
