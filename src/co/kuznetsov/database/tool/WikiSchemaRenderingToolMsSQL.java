@@ -7,7 +7,7 @@ import java.util.Set;
  * @author localstorm
  *         Date: 13.01.14
  */
-public class WikiSchemaRenderingToolMsSQL {
+public class WikiSchemaRenderingToolMsSQL extends BaseNamesRenderer {
 
     private static final Set<String> VARSIZE_TYPES = new HashSet<String>() {{
         add("CHAR");
@@ -15,7 +15,7 @@ public class WikiSchemaRenderingToolMsSQL {
     }};
 
     public static void main(String[] args) throws Exception {
-        WikiSchemaRenderingTool.main(args, "net.sourceforge.jtds.jdbc.Driver", null, VARSIZE_TYPES);
+        WikiSchemaRenderingTool.main(args, "net.sourceforge.jtds.jdbc.Driver", null, new BaseNamesRenderer(), VARSIZE_TYPES);
     }
 
 }

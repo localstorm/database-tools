@@ -1,10 +1,6 @@
 package co.kuznetsov.database.tool;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.HashSet;
-import java.util.Properties;
 import java.util.Set;
 
 /**
@@ -18,7 +14,7 @@ public class WikiSchemaRenderingToolMySQL {
     }};
 
     public static void main(String[] args) throws Exception {
-        WikiSchemaRenderingTool.main(args, "com.mysql.jdbc.Driver", null, VARSIZE_TYPES);
+        WikiSchemaRenderingTool.main(args, "com.mysql.jdbc.Driver", null, new BaseNamesRenderer(), VARSIZE_TYPES);
     }
 
 }

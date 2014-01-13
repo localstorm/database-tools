@@ -1,8 +1,5 @@
 package co.kuznetsov.database.tool;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
@@ -21,7 +18,7 @@ public class WikiSchemaRenderingToolOracle {
     public static void main(String[] args) throws Exception {
         Properties oracleProps = new Properties();
         oracleProps.setProperty("remarksReporting", "true");
-        WikiSchemaRenderingTool.main(args, "oracle.jdbc.driver.OracleDriver", oracleProps, VARSIZE_TYPES);
+        WikiSchemaRenderingTool.main(args, "oracle.jdbc.driver.OracleDriver", oracleProps, new BaseNamesRenderer(), VARSIZE_TYPES);
     }
 
 }

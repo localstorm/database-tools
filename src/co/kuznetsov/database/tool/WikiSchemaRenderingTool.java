@@ -24,8 +24,9 @@ public class WikiSchemaRenderingTool {
 
     private final Set<String> varsizeTypes;
     private final JsBean filters;
+    private final NamesRenderer namesRenderer;
 
-    public static void main(String[] args, String driverClass, Properties extras, Set<String> varsizeTypes) throws Exception {
+    public static void main(String[] args, String driverClass, Properties extras, NamesRenderer namesRenderer, Set<String> varsizeTypes) throws Exception {
 
         if (args.length < 4) {
             WikiSchemaRenderingTool.usage(System.err);
@@ -37,7 +38,7 @@ public class WikiSchemaRenderingTool {
         String password = args[2];
         String filtersPath = args[3];
 
-        WikiSchemaRenderingTool rdr = WikiSchemaRenderingTool.newRenderer(filtersPath, varsizeTypes);
+        WikiSchemaRenderingTool rdr = WikiSchemaRenderingTool.newRenderer(filtersPath, varsizeTypes, namesRenderer);
 
         if (WikiSchemaRenderingTool.loadDriver(driverClass)) return;
 
@@ -63,16 +64,17 @@ public class WikiSchemaRenderingTool {
         }
     }
 
-    public static WikiSchemaRenderingTool newRenderer(String filtersPath, Set<String> varsizeTypes) throws Exception {
+    public static WikiSchemaRenderingTool newRenderer(String filtersPath, Set<String> varsizeTypes, NamesRenderer namesRenderer) throws Exception {
         JsBean filters = new JsBean();
         filters.addJsLibPaths(filtersPath);
         filters.init();
-        return new WikiSchemaRenderingTool(varsizeTypes, filters);
+        return new WikiSchemaRenderingTool(varsizeTypes, filters, namesRenderer);
     }
 
-    public WikiSchemaRenderingTool(Set<String> varsizeTypes, JsBean filters) {
+    public WikiSchemaRenderingTool(Set<String> varsizeTypes, JsBean filters, NamesRenderer namesRenderer) {
         this.filters = filters;
         this.varsizeTypes = varsizeTypes;
+        this.namesRenderer = namesRenderer;
     }
 
     public static boolean loadDriver(String className) {
@@ -132,7 +134,8 @@ public class WikiSchemaRenderingTool {
         ColumnDataType cdt = column.getColumnDataType();
         String typeStr = niceType(cdt, column.getSize());
         String remarks = column.getRemarks();
-        System.out.println(String.format("|| %s | %s | %s | %s ||", column.getName(), typeStr, remarks, constraints(column)));
+        String cname = namesRenderer.renderColumn(column.getName());
+        System.out.println(String.format("|| %s | %s | %s | %s ||", cname, typeStr, remarks, constraints(column)));
     }
 
     private String constraints(Column column) {
@@ -167,7 +170,7 @@ public class WikiSchemaRenderingTool {
     }
 
     private void renderTableStart(Table table) {
-        System.out.println("=====" + table.getName() + "=====");
+        System.out.println("=====" + namesRenderer.renderTable(table.getName()) + "=====");
         System.out.println("#|");
         System.out.println("||**Колонка**|**Тип**|**Комментарий**|**Ограничения**||");
     }
@@ -177,7 +180,7 @@ public class WikiSchemaRenderingTool {
     }
 
     private void renderSchema(Schema schema) {
-        //System.out.println("SCHEMA: " + schema.getName());
+        //System.out.println("SCHEMA: " + namesRenderer.renderSchema(schema.getName()));
     }
 
     public static void usage(PrintStream err) {
