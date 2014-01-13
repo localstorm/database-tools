@@ -28,14 +28,6 @@ Windows: java -cp "dist/\*;lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderin
 
 Unix:    java -cp "dist/\*:lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolOracle <Oracle JDBC url> <user password> oracle-filters.js
 
-Output:
-
-=====A_CURSE_LEXIC=====
-#|
-||**Колонка**|**Тип**|**Комментарий**|**Ограничения**||
-|| REG_EXPR | VARCHAR2(255) | Регулярное выражение для проверки текста | NULL ||
-|#
-
 
 *** WikiSchemaRenderingToolMySQL ***
 
@@ -54,14 +46,3 @@ Usage:
 
 Windows: java -cp "dist/\*;lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolMySQL <MySQL JDBC url> <user password> mysql-filters.js
 Unix:    java -cp "dist/\*:lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolMySQL <MySQL JDBC url> <user password> mysql-filters.js
-
-
-Output:
-
-=====MN_CURSE_LEXIC=====
-#|
-||**Колонка**|**Тип**|**Комментарий**|**Ограничения**||
-|| REG_EXPR | VARCHAR(255) | Регулярное выражение для проверки текста | NULL ||
-|#
-
-
