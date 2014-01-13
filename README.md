@@ -45,4 +45,5 @@ function acceptTable(tableName){
 Usage:
 
 Windows: java -cp "dist/\*;lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolMySQL <MySQL JDBC url> <user password> mysql-filters.js
+
 Unix:    java -cp "dist/\*:lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolMySQL <MySQL JDBC url> <user password> mysql-filters.js
