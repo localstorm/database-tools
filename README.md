@@ -64,3 +64,7 @@ java -cp "dist/*;lib/*" co.kuznetsov.database.tool.WikiSchemaRenderingToolMySQL 
 ```
 java -cp "dist/*:lib/*" co.kuznetsov.database.tool.WikiSchemaRenderingToolMySQL <MySQL JDBC url> <user password> mysql-filters.js
 ```
+
+### Output Samples:
+
+https://github.com/localstorm/database-tools/blob/master/output/output-sample.txt
