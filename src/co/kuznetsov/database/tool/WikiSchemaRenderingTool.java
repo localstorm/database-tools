@@ -100,7 +100,7 @@ public class WikiSchemaRenderingTool {
             @Override
             public boolean include(String schema) {
                 try {
-                    return filters.processJava("acceptSchema(\'" + schema + "\')", null, Boolean.class);
+                    return filters.processJava("acceptSchema($value.get())", schema, Boolean.class);
                 } catch (ScriptException e) {
                     throw new RuntimeException(e);
                 }
@@ -110,7 +110,7 @@ public class WikiSchemaRenderingTool {
             @Override
             public boolean include(String table) {
                 try {
-                    return filters.processJava("acceptTable(\'" + table + "\')", null, Boolean.class);
+                    return filters.processJava("acceptTable($value.get())", table, Boolean.class);
                 } catch (ScriptException e) {
                     throw new RuntimeException(e);
                 }
