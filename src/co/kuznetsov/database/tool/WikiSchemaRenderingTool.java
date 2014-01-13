@@ -137,8 +137,7 @@ public class WikiSchemaRenderingTool {
 
     private String constraints(Column column) {
 
-        ColumnDataType cdt = column.getColumnDataType();
-        boolean nullable = cdt.isNullable();
+        boolean nullable = column.isNullable();
         String nullableStr = (nullable) ? "NULL" : "NOT_NULL";
 
         String refStr = "";
