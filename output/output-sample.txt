@@ -1,0 +1,23 @@
+=====A_ATTACHMENT_GROUPS=====
+#|
+||**Колонка**|**Тип**|**Комментарий**|**Ограничения**||
+|| GROUP_ID | NUMBER | Идентификатор группы вложений, предоставляется хранилищем | NOT_NULL, PK ||
+|| MESSAGE_ID | NUMBER | Идентификатор сообщения | NULL, FK ||
+|| CONVERSATION_ID | NUMBER | Идентификатор диалога | NOT_NULL ||
+|| AUTHOR_UID | NUMBER | UID автора вложений | NOT_NULL ||
+|| AUTHOR_ROLE_ID | NUMBER | Роль автора вложений | NOT_NULL ||
+|| PRIVACY_MODE | NUMBER | Режим приватности как в сообщениях | NULL ||
+|| CREATED_TS | TIMESTAMP(6) | Время создания вложения | NOT_NULL ||
+|#
+
+=====A_ATTACHMENTS=====
+#|
+||**Колонка**|**Тип**|**Комментарий**|**Ограничения**||
+|| ATTACHMENT_ID | NUMBER | Идентификатор аттачмента | NOT_NULL, PK ||
+|| GROUP_ID | NUMBER | Идентификатор группы вложений | NOT_NULL ||
+|| CONTENT_ID | VARCHAR2(100) | Идентификатор аттачмента в Elliptics | NULL ||
+|| CONTENT_TYPE | VARCHAR2(50) | Тип аттачмента | NULL ||
+|| UPLOAD_TS | TIMESTAMP(6) | Время загрузки аттачмента | NOT_NULL ||
+|| FILE_NAME | VARCHAR2(100) | Имя файла | NOT_NULL ||
+|| FILE_SIZE | NUMBER | Размер файла | NOT_NULL ||
+|#
