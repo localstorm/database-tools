@@ -6,7 +6,7 @@ Some occasionally helpful database tools.
 System requirements: Java 7+.
 
 
-WikiSchemaRenderingTool: Wiki-docs generator for Oracle/Mysql/MS SQL/...
+WikiSchemaRenderingTool: Cross-platform wiki-docs generator for JDBC-enabled databases
 ---------------------------------------------------------------------------
 
 ### ORACLE
