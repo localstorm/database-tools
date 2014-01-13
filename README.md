@@ -9,7 +9,7 @@ System requirements: Java 7+.
 WikiSchemaRenderingTool: Cross-platform wiki-docs generator for JDBC-enabled databases
 ---------------------------------------------------------------------------
 
-### ORACLE
+### Oracle
 
 
 Generates Wiki-markup documentation for Oracle database tables. What tables/schemas to look at is determined by
