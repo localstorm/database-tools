@@ -6,10 +6,11 @@ Some occasionally helpful database tools.
 System requirements: Java 7+.
 
 
-WikiSchemaRenderingTool -- Wiki-docs generator for Oracle/Mysql/MS SQL/...
+WikiSchemaRenderingTool: Wiki-docs generator for Oracle/Mysql/MS SQL/...
 ---------------------------------------------------------------------------
 
-*** WikiSchemaRenderingToolOracle ***
+ORACLE
+~~~~~~
 
 Generates Wiki-markup documentation for Oracle database tables. What tables/schemas to look at is determined by
 JavaScript filtering functions (see oracle-filters.js):
@@ -29,7 +30,8 @@ Windows: java -cp "dist/\*;lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderin
 Unix:    java -cp "dist/\*:lib/\*" co.kuznetsov.database.tool.WikiSchemaRenderingToolOracle <Oracle JDBC url> <user password> oracle-filters.js
 
 
-*** WikiSchemaRenderingToolMySQL ***
+MySQL
+~~~~~~
 
 Generates Wiki-markup documentation for MySQL database tables. What tables/schemas to look at is determined by
 JavaScript filtering functions (see mysql-filters.js):
