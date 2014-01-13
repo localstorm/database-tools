@@ -10,6 +10,7 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 /**
+ * Experimental tool class to utilize Java Scripting API (https://github.com/localstorm/java-dynamic-tools)
  * @author localstorm
  *         Date: 11.12.13
  */
